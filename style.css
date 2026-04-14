@@ -1,22 +1,30 @@
 html, body {
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
+  padding: 20px 40px;
   backdrop-filter: blur(10px);
   z-index: 10;
-  color: #4da3ff;
 }
 
 .navbar a {
   margin-left: 20px;
   text-decoration: none;
   color: #4da3ff;
-  transition: 0.3s;
 }
 
 .navbar a:hover {
   color: #00e5ff;
-  text-shadow: 0 0 10px #00e5ff;
 }
 
 .hero {
@@ -26,8 +34,6 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-title {
@@ -35,18 +41,10 @@ html, body {
   background: linear-gradient(90deg, #4da3ff, #00e5ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(77,163,255,0.2);
-}
-
-.hero-sub {
-  color: #7fb8ff;
 }
 
 .section {
-  padding: 100px 10%;
-  position: relative;
-  z-index: 1;
-  color: #4da3ff;
+  padding: 120px 10%;
 }
 
 .cards {
@@ -58,15 +56,11 @@ html, body {
 .card {
   background: rgba(77,163,255,0.08);
   border: 1px solid rgba(77,163,255,0.2);
-  padding: 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  transition: transform 0.3s, box-shadow 0.3s;
-  color: #4da3ff;
+  padding: 30px;
+  border-radius: 16px;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 30px rgba(0,229,255,0.3);
-  border-color: #00e5ff;
+  transform: translateY(-8px);
+  transition: 0.3s;
 }
