@@ -1,12 +1,4 @@
-body {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 50px;
-  backdrop-filter: blur(10px);
-}
-
-.navbar a {
-  margin-left: 20px;
+html, body {
   text-decoration: none;
   color: white;
   transition: 0.3s;
@@ -23,6 +15,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
@@ -34,6 +28,8 @@ body {
 
 .section {
   padding: 100px 10%;
+  position: relative;
+  z-index: 1;
 }
 
 .cards {
