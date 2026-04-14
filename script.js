@@ -1,75 +1,62 @@
-// Smooth scroll
-function scrollToProjects() {
-  document.getElementById("projects").scrollIntoView({
-    behavior: "smooth"
-  });
-}
+import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
 
-// Typing effect
-const words = ["Computer Engineer", "Builder", "Problem Solver"];
-let i = 0, j = 0, current = "", deleting = false;
-
-function type() {
-  current = words[i];
-  document.getElementById("typing").textContent = current.substring(0, j);
-
-  if (!deleting && j++ === current.length) {
-    deleting = true;
-    setTimeout(type, 1000);
-    return;
-  }
-
-  if (deleting && j-- === 0) {
-    deleting = false;
-    i = (i + 1) % words.length;
-  }
-
-  setTimeout(type, deleting ? 50 : 100);
-}
-type();
-
-// Dark mode toggle
-function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-
-// Scroll animations
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-
-
-// THREE.JS BACKGROUND
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
+
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
+camera.position.setZ(30);
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({ color: 0x38bdf8 });
+// Geometry
+const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+const material = new THREE.MeshStandardMaterial({
+  color: 0x00ffff,
+  wireframe: true
+});
+
 const torus = new THREE.Mesh(geometry, material);
-
 scene.add(torus);
 
-const light = new THREE.PointLight(0xffffff);
-light.position.set(20, 20, 20);
-scene.add(light);
+// Lights
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(20, 20, 20);
 
-camera.position.z = 30;
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(pointLight, ambientLight);
 
+// Stars
+function addStar() {
+  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const star = new THREE.Mesh(geometry, material);
+
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+  star.position.set(x, y, z);
+  scene.add(star);
+}
+
+Array(200).fill().forEach(addStar);
+
+// Animation
 function animate() {
   requestAnimationFrame(animate);
+
   torus.rotation.x += 0.01;
   torus.rotation.y += 0.005;
+  torus.rotation.z += 0.01;
+
   renderer.render(scene, camera);
 }
+
 animate();
+
+// Resize
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
