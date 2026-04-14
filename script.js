@@ -21,23 +21,23 @@ camera.position.setZ(30);
 // Torus
 const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
 const material = new THREE.MeshStandardMaterial({
-  color: 0x00ffff,
+  color: 0x4da3ff,
   wireframe: true
 });
 const torus = new THREE.Mesh(geometry, material);
 scene.add(torus);
 
 // Lights
-const pointLight = new THREE.PointLight(0xffffff);
+const pointLight = new THREE.PointLight(0x4da3ff, 1.5);
 pointLight.position.set(20, 20, 20);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
+const ambientLight = new THREE.AmbientLight(0x1a2a3a);
 scene.add(pointLight, ambientLight);
 
 // Stars
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const material = new THREE.MeshStandardMaterial({ color: 0x4da3ff });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
@@ -48,13 +48,13 @@ function addStar() {
   scene.add(star);
 }
 
-Array(300).fill().forEach(addStar);
+Array(250).fill().forEach(addStar);
 
 function animate() {
   requestAnimationFrame(animate);
 
-  torus.rotation.x += 0.005;
-  torus.rotation.y += 0.003;
+  torus.rotation.x += 0.004;
+  torus.rotation.y += 0.002;
 
   renderer.render(scene, camera);
 }
