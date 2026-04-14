@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <p>This is my first website 🚀</p>
+
+  <nav>
+    <h2>MySite</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="hero">
+    <h1>Hello, I'm Ben</h1>
+    <p>Computer Engineering Student</p>
+    <button onclick="scrollToProjects()">View My Work</button>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Project One</h3>
+      <p>Describe your project here.</p>
+    </div>
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>Describe your project here.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
