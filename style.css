@@ -1,11 +1,22 @@
 html, body {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  color: #4da3ff;
+}
+
+.navbar a {
+  margin-left: 20px;
   text-decoration: none;
-  color: white;
+  color: #4da3ff;
   transition: 0.3s;
 }
 
 .navbar a:hover {
-  color: #00ffff;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
 }
 
 .hero {
@@ -21,15 +32,21 @@ html, body {
 
 .hero-title {
   font-size: 4rem;
-  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  background: linear-gradient(90deg, #4da3ff, #00e5ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(77,163,255,0.2);
+}
+
+.hero-sub {
+  color: #7fb8ff;
 }
 
 .section {
   padding: 100px 10%;
   position: relative;
   z-index: 1;
+  color: #4da3ff;
 }
 
 .cards {
@@ -39,14 +56,17 @@ html, body {
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(77,163,255,0.08);
+  border: 1px solid rgba(77,163,255,0.2);
   padding: 40px;
   border-radius: 20px;
   backdrop-filter: blur(20px);
   transition: transform 0.3s, box-shadow 0.3s;
+  color: #4da3ff;
 }
 
 .card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 30px rgba(0,255,255,0.4);
+  box-shadow: 0 0 30px rgba(0,229,255,0.3);
+  border-color: #00e5ff;
 }
