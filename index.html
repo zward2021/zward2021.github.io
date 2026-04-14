@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zachary Ben Ward - My Portfolio</title>
+  <title>Ben | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div class="background"></div>
+
   <nav>
-    <h2>Zachary Ben Ward</h2>
+    <h2>Ben.dev</h2>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -17,26 +19,35 @@
   </nav>
 
   <section id="home" class="hero">
-    <h1>Hello (World), I'm Ben</h1>
-    <p>Computer Engineering Student at Florida Atlantic University</p>
+    <h1>Hi, I'm Ben</h1>
+    <h2><span id="typing"></span></h2>
     <button onclick="scrollToProjects()">View My Work</button>
   </section>
 
   <section id="projects" class="projects">
     <h2>Projects</h2>
-    <div class="card">
-      <h3>Project One</h3>
-      <p>Describe your project here.</p>
-    </div>
-    <div class="card">
-      <h3>Project Two</h3>
-      <p>Describe your project here.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Project One</h3>
+        <p>Put something cool here.</p>
+      </div>
+
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>Another awesome project.</p>
+      </div>
+
+      <div class="card">
+        <h3>Project Three</h3>
+        <p>Show off your skills.</p>
+      </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Email: zward2021@fau.edu</p>
+    <p>Email: your@email.com</p>
   </section>
 
   <script src="script.js"></script>
