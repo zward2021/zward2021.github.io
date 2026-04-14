@@ -1,4 +1,4 @@
-// Scroll
+// Smooth scroll
 function scrollToProjects() {
   document.getElementById("projects").scrollIntoView({
     behavior: "smooth"
