@@ -14,11 +14,10 @@ const renderer = new THREE.WebGLRenderer({
   alpha: true
 });
 
-renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.z = 30;
 
-// Torus
+// Main object
 const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
 const material = new THREE.MeshStandardMaterial({
   color: 0x4da3ff,
@@ -28,32 +27,30 @@ const torus = new THREE.Mesh(geometry, material);
 scene.add(torus);
 
 // Lights
-const pointLight = new THREE.PointLight(0x4da3ff, 1.5);
-pointLight.position.set(20, 20, 20);
-
-const ambientLight = new THREE.AmbientLight(0x1a2a3a);
-scene.add(pointLight, ambientLight);
+scene.add(new THREE.AmbientLight(0x1a2a3a));
+const light = new THREE.PointLight(0x4da3ff, 2);
+light.position.set(20, 20, 20);
+scene.add(light);
 
 // Stars
-function addStar() {
-  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0x4da3ff });
-  const star = new THREE.Mesh(geometry, material);
+for (let i = 0; i < 200; i++) {
+  const starGeo = new THREE.SphereGeometry(0.2, 12, 12);
+  const starMat = new THREE.MeshStandardMaterial({ color: 0x4da3ff });
+  const star = new THREE.Mesh(starGeo, starMat);
 
-  const [x, y, z] = Array(3)
-    .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(200));
+  star.position.set(
+    (Math.random() - 0.5) * 200,
+    (Math.random() - 0.5) * 200,
+    (Math.random() - 0.5) * 200
+  );
 
-  star.position.set(x, y, z);
   scene.add(star);
 }
-
-Array(250).fill().forEach(addStar);
 
 function animate() {
   requestAnimationFrame(animate);
 
-  torus.rotation.x += 0.004;
+  torus.rotation.x += 0.003;
   torus.rotation.y += 0.002;
 
   renderer.render(scene, camera);
