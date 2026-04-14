@@ -4,48 +4,54 @@
   <meta charset="UTF-8">
   <title>Ben | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-  <div class="background"></div>
+  <canvas id="bg"></canvas>
 
   <nav>
     <h2>Ben.dev</h2>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div>
+      <button onclick="toggleTheme()">🌙</button>
+    </div>
   </nav>
 
-  <section id="home" class="hero">
+  <section class="hero fade-in">
     <h1>Hi, I'm Ben</h1>
-    <h2><span id="typing"></span></h2>
+    <h2 id="typing"></h2>
     <button onclick="scrollToProjects()">View My Work</button>
   </section>
 
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
+  <section id="projects">
+    <h2 class="fade-in">Projects</h2>
 
     <div class="cards">
-      <div class="card">
+
+      <div class="card fade-in">
         <h3>Project One</h3>
-        <p>Put something cool here.</p>
+        <p>Cool description.</p>
+        <div class="buttons">
+          <a href="#" target="_blank">Live</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         <h3>Project Two</h3>
-        <p>Another awesome project.</p>
+        <p>Another project.</p>
+        <div class="buttons">
+          <a href="#">Live</a>
+          <a href="#">GitHub</a>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Project Three</h3>
-        <p>Show off your skills.</p>
-      </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section class="contact fade-in">
     <h2>Contact</h2>
     <p>Email: your@email.com</p>
   </section>
