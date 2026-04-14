@@ -2,56 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ben | Portfolio</title>
+  <title>Zachary Ben Ward - My Portfolio</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-  <canvas id="bg"></canvas>
-
   <nav>
-    <h2>Ben.dev</h2>
-    <button onclick="toggleTheme()">🌙</button>
+    <h2>Zachary Ben Ward</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <section class="hero fade-in">
-    <h1>Hi, I'm Ben</h1>
-    <h2 id="typing"></h2>
+  <section id="home" class="hero">
+    <h1>Hello (World), I'm Ben</h1>
+    <p>Computer Engineering Student at Florida Atlantic University</p>
     <button onclick="scrollToProjects()">View My Work</button>
   </section>
 
-  <section id="projects">
-    <h2 class="fade-in">Projects</h2>
-
-    <div class="cards">
-
-      <div class="card fade-in">
-        <h3>Project One</h3>
-        <p>Cool description.</p>
-        <div class="buttons">
-          <a href="#" target="_blank">Live</a>
-          <a href="#" target="_blank">GitHub</a>
-        </div>
-      </div>
-
-      <div class="card fade-in">
-        <h3>Project Two</h3>
-        <p>Another project.</p>
-        <div class="buttons">
-          <a href="#" target="_blank">Live</a>
-          <a href="#" target="_blank">GitHub</a>
-        </div>
-      </div>
-
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Project One</h3>
+      <p>Describe your project here.</p>
+    </div>
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>Describe your project here.</p>
     </div>
   </section>
 
-  <section class="contact fade-in">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Email: your@email.com</p>
+    <p>Email: zward2021@fau.edu</p>
   </section>
 
   <script src="script.js"></script>
