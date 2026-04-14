@@ -1,18 +1,29 @@
 :root {
   --bg: #0f172a;
-  --text: white;
+  --text: #ffffff;
   --card: rgba(255,255,255,0.1);
+  --accent: #38bdf8;
 }
 
 .light {
-  --bg: #ffffff;
-  --text: black;
+  --bg: #f8fafc;
+  --text: #0f172a;
   --card: rgba(0,0,0,0.05);
+  --accent: #2563eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
@@ -30,7 +41,19 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  padding: 25px 40px;
+}
+
+/* Sections */
+section {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
 }
 
 /* Hero */
@@ -39,36 +62,73 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 25px;
   align-items: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+/* Button */
+button {
+  padding: 12px 25px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 /* Cards */
 .cards {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .card {
   background: var(--card);
-  padding: 20px;
-  border-radius: 12px;
-  width: 250px;
+  padding: 25px;
+  border-radius: 15px;
+  width: 260px;
   transition: 0.3s;
+  backdrop-filter: blur(10px);
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Buttons inside cards */
+.buttons {
+  margin-top: 15px;
 }
 
 .buttons a {
-  margin-right: 10px;
+  margin: 0 8px;
   text-decoration: none;
-  color: #38bdf8;
+  color: var(--accent);
+  font-weight: bold;
 }
 
-/* Fade-in animation */
+/* Section heights */
+#projects {
+  min-height: 100vh;
+}
+
+.contact {
+  min-height: 80vh;
+}
+
+/* Scroll animation */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
