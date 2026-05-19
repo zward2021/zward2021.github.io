@@ -3,47 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Zachary Ward | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="bg"></canvas>
 
-  <header class="navbar">
-    <div class="logo">Your Name</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header>
+    <h1>Zachary Ben Ward</h1>
+    <p>Computer Engineering Student | Embedded Systems | Software Engineering</p>
+    <div class="links">
+      <a href="mailto:wardben101@icloud.com">Email</a>
+      <a href="https://github.com/zward2021" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/zward2021" target="_blank">LinkedIn</a>
+    </div>
   </header>
 
-  <main class="content">
-    <section class="hero">
-      <h1 class="hero-title">Your Headline</h1>
-      <p class="hero-sub">Short tagline goes here</p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Engineering student at Florida Atlantic University with a focus on
+      embedded systems, firmware development, and software engineering. I enjoy building
+      hardware-integrated solutions and solving real-world technical problems.
+    </p>
+  </section>
 
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>Placeholder text...</p>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="cards">
-        <div class="card">Project 1</div>
-        <div class="card">Project 2</div>
-        <div class="card">Project 3</div>
-      </div>
-    </section>
+    <div class="project">
+      <h3>Embedded Smart Lock System</h3>
+      <p>
+        Built an Arduino-based access control system using RFID and keypad authentication.
+        Integrated hardware components including servo motors and sensors with embedded C/C++ firmware.
+      </p>
+    </div>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>Placeholder text...</p>
-    </section>
-  </main>
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>
+        Responsive portfolio website hosted on GitHub Pages showcasing engineering projects and skills.
+      </p>
+    </div>
 
-  <script type="module" src="script.js"></script>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>C, C++, Python, C#</li>
+      <li>Embedded Systems & Microcontrollers</li>
+      <li>Git / GitHub</li>
+      <li>Hardware Debugging</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2026 Zachary Ward</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
