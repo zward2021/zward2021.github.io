@@ -8,53 +8,63 @@
 </head>
 <body>
 
-  <header>
-    <h1>Zachary Ben Ward</h1>
-    <p>Computer Engineering Student | Embedded Systems | Software Engineering</p>
-    <div class="links">
-      <a href="mailto:wardben101@icloud.com">Email</a>
+  <!-- Navbar -->
+  <nav>
+    <h2>Zachary Ward</h2>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Hello, I'm Zachary</h1>
+    <p>Computer Engineering Student • Embedded Systems • Software Developer</p>
+    <div class="buttons">
       <a href="https://github.com/zward2021" target="_blank">GitHub</a>
       <a href="https://linkedin.com/in/zward2021" target="_blank">LinkedIn</a>
     </div>
-  </header>
+  </section>
 
-  <section id="about">
+  <!-- About -->
+  <section id="about" class="card">
     <h2>About Me</h2>
     <p>
-      I am a Computer Engineering student at Florida Atlantic University with a focus on
-      embedded systems, firmware development, and software engineering. I enjoy building
-      hardware-integrated solutions and solving real-world technical problems.
+      I build embedded systems and software with a focus on real-world applications.
+      I enjoy working close to hardware, designing efficient systems, and solving complex technical problems.
     </p>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
 
-    <div class="project">
-      <h3>Embedded Smart Lock System</h3>
-      <p>
-        Built an Arduino-based access control system using RFID and keypad authentication.
-        Integrated hardware components including servo motors and sensors with embedded C/C++ firmware.
-      </p>
-    </div>
+    <div class="grid">
+      <div class="project-card">
+        <h3>Smart Lock System</h3>
+        <p>RFID + keypad Arduino system with real-time authentication and servo locking.</p>
+      </div>
 
-    <div class="project">
-      <h3>Portfolio Website</h3>
-      <p>
-        Responsive portfolio website hosted on GitHub Pages showcasing engineering projects and skills.
-      </p>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Responsive GitHub Pages site showcasing engineering projects and skills.</p>
+      </div>
     </div>
-
   </section>
 
-  <section id="skills">
+  <!-- Skills -->
+  <section id="skills" class="card">
     <h2>Skills</h2>
-    <ul>
-      <li>C, C++, Python, C#</li>
-      <li>Embedded Systems & Microcontrollers</li>
-      <li>Git / GitHub</li>
-      <li>Hardware Debugging</li>
-    </ul>
+    <div class="skills-list">
+      <span>C</span>
+      <span>C++</span>
+      <span>Python</span>
+      <span>Embedded Systems</span>
+      <span>Git</span>
+      <span>Hardware Debugging</span>
+    </div>
   </section>
 
   <footer>
